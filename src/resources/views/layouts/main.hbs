@@ -7,14 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <header>
-        HEADER
-    </header>
+    <div class="app">
+        {{> header}}
 
-        {{{body}}}
-    <footer>
-        FOOTER
-    </footer>
+        <div class="comtainer">
+            {{{body}}}
+        </div>
+
+        {{> footer}}
+    </div>
 </body>
 </html>

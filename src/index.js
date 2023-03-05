@@ -1,5 +1,6 @@
 const express = require('express');
 const handlebars = require ('express-handlebars');
+const { extname } = require('path');
 //import thu vien
 
 const app = express();
@@ -15,10 +16,11 @@ const path = require('path');
 //template engine
 //engine đặt tên là handlebars (num1) và sử dụng
 //API thư viện gọi đến từ handlebars() đã tạo ở trên
-app.engine('handlebars', handlebars.engine({ defaultLayout: 'main' }));
+app.engine('hbs', handlebars.engine({ defaultLayout: 'main',extname: '.hbs'}));
+// configure đuổi file (extname: '.hbs') 
 //sử dụng lại engine gọi ra theo tên
 // mặc định là 
-app.set('view engine', 'handlebars');
+app.set('view engine', 'hbs');
 // trỏ đến thư mục views trong folder resources
 app.set('views', path.join(__dirname,'resources\\views'));
 
