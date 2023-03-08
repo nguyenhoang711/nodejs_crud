@@ -1,5 +1,6 @@
 const express = require('express');
 const handlebars = require ('express-handlebars');
+// const morgan = require('morgan');
 // const { extname } = require('path');
 //import thu vien
 
@@ -36,6 +37,11 @@ app.get('/', (req, res) => {
 //thêm 1 page khác
 app.get('/news', (req, res) => {
   res.render('news');
+})
+
+// tao page search
+app.get('/search', (req, res) => {
+    res.render('search');
 })
 
 // cổng
